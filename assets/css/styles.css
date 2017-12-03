@@ -1,0 +1,15 @@
+body {
+  font-family: "Lucida Console", Monaco, monospace;
+  text-align: center;
+}
+
+h1 {
+  padding: 20px;
+  letter-spacing: 10px;
+  border: 1px solid black;
+}
+
+.center {
+  margin: auto;
+  width: 300px;
+}
