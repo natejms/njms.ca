@@ -1,0 +1,17 @@
+extends: default.liquid ---
+<div>
+  <div class="hero">
+    <h1>njms</h1>
+    <p>Programming, web design and lots of blockchain enthusiasm.</p>
+  </div>
+  <div class="posts">
+    {% for post in posts %}
+    <div>
+      <h2><a href="{{post.path}}">{{ post.title }}</a></h2>
+      <h4>{{ post.timestamp }}</h4>
+      <p>{{ post.excerpt }}</p>
+      <hr>
+    </div>
+    {% endfor %}
+  </div>
+</div>

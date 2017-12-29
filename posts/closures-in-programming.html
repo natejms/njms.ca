@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+          <title>njms - Closures in programming: What are they and how do they work?</title>
+        
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="/assets/css/styles.css">
+    </head>
+    <body>
+    <div>
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+              <a class="navbar-brand" href="/">njms</a>
+            </a>
+          </div>
+        </div>
+      </nav>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-3 col-sm-3 sidebar">
+            <h2>njms</h2>
+            <div class="links">
+              <a href="/">home</a>
+              <a href="https://mastodon.club/@natejms">mastodon</a>
+              <a href="http://github.com/natejms">github</a>
+            </div>
+
+            
+              <div class="sidebar-post">
+                <h4><a href="/posts/closures-in-programming.html">Closures in programming: What are they and how do they work?</a></h4>
+                <h6>2017/12/29</h6>
+              </div>
+            
+              <div class="sidebar-post">
+                <h4><a href="/posts/modern-js-arrow-functions.html">Modern JS concepts: Arrow functions, the new and improved function literals</a></h4>
+                <h6>2017/12/29</h6>
+              </div>
+            
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 col-sm-3"></div>
+          <div class="col-md-9 col-sm-9 main">
+            <div class="main-content">
+              
+                <div class="post">
+  <h1 class="post-title">Closures in programming: What are they and how do they work?</h1>
+  <h2><small>2017/12/29</small></h2>
+  <hr>
+  <p>
+    <figure>
+      <img src="/assets/img/post-thumbnails/closures-in-programming.png">
+      <figcaption>
+        A nested function written in JavaScript
+      </figcaption>
+    </figure>
+    <br>
+    <p>Any avid programmer would likely have heard the term “closure” a handful of times, though many newcomers may struggle trying to understand how they work, or even what they are. Let's take a look at a definition <a href="https://en.wikipedia.org/wiki/Closure_(computer_programming)">taken from Wikipedia</a>:</p>
+<blockquote>
+<p>In programming languages, closures (also lexical closures or function closures) are techniques for implementing lexically scoped name binding in languages with first-class functions.</p>
+</blockquote>
+<p>That’s, well, not very intuitive. To be fair, closures aren’t an incredibly intuitive thing when you define them like that. I’m certain, however, that though breaking this definition down things will become much clearer. Let’s take a look:<span data-separator></span></p>
+<h2>Lexical scoping</h2>
+<p>This can actually be broken down even further. First of all, “scoping”. Most programmers should be familiar with scoping. A block of code, usually wrapped in curly braces, is “scoped” in some sense.</p>
+<pre><code># pseudocode
+
+variable num = 1            # x is in the global scope
+
+function add_one(x) {
+  variable sum = x + num    # sum is local to the &quot;add_one&quot; function
+  return sum
+}
+
+print(num)                  # Prints the number 1
+print(sum)                  # Prints a reference error
+</code></pre>
+<p>In that pseudocode example, we declare two variables: <code>num</code> and <code>sum</code>. The variable <code>num</code> is in the global scope, meaning that it can be retrieved anywhere, including from within the function <code>add_one</code>. The <code>sum</code> variable, however, is <em>not</em> global and can only be accessed from within the function.</p>
+<p>In this case, of course, the <code>sum</code> is being returned from the function so if we were to later assign the value returned by the function to a new variable binding we technically could access its contents.</p>
+<pre><code># pseudocode
+
+print(sum)            // ReferenceError: sum is not define
+print(add_one(3));    // 4
+</code></pre>
+<p>That's enough about scoping. How about a <em>lexical</em> scoping? On its own, the word lexicon really has no significance to computer science. A lexicon is like a dictionary or a list of vocabulary. That's where you start to see the analogy.</p>
+<p>Now, the idea behind lexical scoping is that every inner scope has access to the values that exist in the outer scope. For an example,</p>
+<pre><code># pseudocode
+
+function outer() {
+  # Outer block of code
+  variable a = &quot;Hello, World!&quot;
+
+  function inner() {
+    # Inner block of code
+    variable b = a
+  }
+}
+</code></pre>
+<p>Here, we have one function wrapped in another. In the outer block, we define a variable called <code>a</code> and assign it the value &quot;Hello, World!&quot;. Thanks to lexical scoping, the interpreter or compiler allows us to assign the value of the variable <code>a</code> to our new variable <code>b</code>.</p>
+<p>To put it in the most simple form possible, <strong>with lexical scoping, the inner function contains the scope of the outer function</strong>. So, when you're nesting functions, the function on the inside has access to all the values defined on the outside.</p>
+<p>What must be the most common use case for nesting functions is returning them. We refer to functions that are treated like values as they are in functional languages as <em>first-class functions</em>.</p>
+<h2>First-class functions</h2>
+<p>Functional programmers will definitely know about the concept of first-class functions. To put it simply, a first-class function is one that is treated as a <em>first-class citizen</em>. If a language supports first-class functions, then they can be assigned to variables and passed to other functions.</p>
+<p>A function that accepts other functions as arguments is referred to as a high-order function. For a function to be considered high-order, it should meet at least one of these two requirements:</p>
+<ul>
+<li>The function takes at least one other function as an argument.</li>
+<li>The function returns another function defined from within the function.</li>
+</ul>
+<p>Here's an example:</p>
+<pre><code>#pseudocode
+
+function create_increaser(by) {
+  function increaser(inc) {
+    return inc + by
+  }
+
+  return increaser
+}
+
+variable increment_by_one = create_increaser(1)
+variable increment_by_two = create_increaser(2)
+
+increment_by_one(5) // 6
+increment_by_two(5) // 7
+</code></pre>
+<p>Here, a function called <code>create_increaser</code> takes one argument and returns another function. We can assign the returned function to a variable as demonstrated in the example. We can then pass a number to that function and have it incremented by however much we decided earlier.</p>
+<p>This is a pretty simple example, but it gets the point across.</p>
+<p>So now that we know what lexical scoping is and we understand first class functions, how does any of this relate to closures?</p>
+<h2>Finally, closures.</h2>
+<p>Let's revisit our last example. This time, using Javascript:</p>
+<pre><code class="language-javascript">// javascript
+
+function create_increaser(by) {
+  function increaser(inc) {
+    return inc + by;
+  }
+
+  return increaser;
+}
+</code></pre>
+<p>By our understanding of memory management, once the interpreter reaches the end of the scope, in theory, all of the variable bindings should be picked up by the garbage collector. Try looking a little bit closer. At the start of this function, we get a number bound to this binding called <code>by</code> representing by how much the &quot;increaser&quot; should increment each number.</p>
+<p>As we understand scoping, this binding should be eliminated after the function has run. Yet lo and behold:</p>
+<pre><code class="language-javascript">// javascript
+
+// The binding 'by' comes into scope and then falls out
+var increment_by_one = create_increaser(1);
+
+
+// We increment the number 2 by the value that shouldn't exist anymore
+console.log(increment_by_one(2));
+</code></pre>
+<p>We can still use it. How do we still have access to this value if it shouldn't exist?</p>
+<p>This is because in Javascript, all function are closures: a sort of function that &quot;captures&quot; it's lexical scope. If you're using a language that supports closures, you have the power to hang on to scopes after the block has finished executing. In other words, using this pattern, we can still access values created in functions even after they've been run.</p>
+<h2>A practical use case</h2>
+<p>Alright, so that's all great, but are there any practical use cases for this concept?</p>
+<p>Here's an example I find particularly useful in Python</p>
+<pre><code class="language-python"># python
+
+import os
+
+dir1 = &quot;Document&quot;
+sub_dir = &quot;work&quot;
+project_folder_one = &quot;project1&quot;
+project_folder_two = &quot;project2&quot;
+
+with open(os.path.join(dir1, sub_dir, project_folder_one, &quot;file.txt&quot;), &quot;w&quot;) as f:
+  f.write(&quot;Hello, World!&quot;)
+
+with open(os.path.join(dir1, sub_dir, project_folder_two, &quot;file.txt&quot;), &quot;w&quot;) as f:
+    f.write(&quot;Hello, World!&quot;)
+</code></pre>
+<p>So here, I have the path <code>Documents/work</code> broken down into variables before using it multiple times with <code>os.path.join</code>, a function used to join path components in an OS-independent way.</p>
+<p>When my project starts getting more complex and I need to use that path more often, things get out of hand. Of course, thanks to closures, I can do something like this:</p>
+<pre><code class="language-python"># python
+
+def relative(origin):
+    def joined (*to):
+        path = origin
+        for t in to:
+            path = os.path.join(path, t)
+        return path
+
+    return joined
+
+from_work = relative(os.path.join(&quot;Documents&quot;, &quot;work&quot;))
+
+with open(from_work(&quot;project1&quot;, &quot;file.txt&quot;), &quot;w&quot;) as f:
+  f.write(&quot;Hello, World!&quot;)
+
+with open(from_work(&quot;project1&quot;, &quot;build&quot;, &quot;file.txt&quot;), &quot;w&quot;) as f:
+    f.write(&quot;Hello, World!&quot;)
+</code></pre>
+<p>See? Much more efficient. Maybe this specific use case isn't extremely useful to everyone but I think it demonstrates how much of an impact closures can have on one's project.</p>
+<h2>Further reading</h2>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures">Closures - JavaScript | MDN</a></li>
+<li><a href="https://stackoverflow.com/questions/36636/what-is-a-closure">functional programming - What is a 'Closure'? - Stack Overflow</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Scope_(computer_science)#Lexical_scoping">Lexical scoping on Wikipedia</a></li>
+</ul>
+<p><em>Agree or disagree? Think I missed or poorly explained something important? Questions, comments or concerns? Leave a comment down below!</em></p>
+
+  </p>
+</div>
+
+              
+            </div>
+            <footer>
+              <p>
+                <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+                  <img src="https://i.creativecommons.org/l/by/4.0/88x31.png"
+                       alt="Creative Commons License"
+                       style="border-width:0"/>
+                </a><br />
+                Unless otherwise noted, content is licensed under a
+                <a href="http://creativecommons.org/licenses/by/4.0/"
+                   rel="license">
+                  Creative Commons Attribution 4.0 International License
+                </a>.
+              </p>
+
+              <p>
+                Footer content &#169; 2018 njms.ca
+              </p>
+
+              <ul class="visible-xs">
+                <li><a href="/">home</a></li>
+                <li><a href="https://mastodon.club/@natejms">mastodon</a></li>
+                <li><a href="http://github.com/natejms">github</a></li>
+              </ul>
+            </footer>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

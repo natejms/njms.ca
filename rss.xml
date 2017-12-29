@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>njms blog</title><link>https://njms.ca</link><description>A blog, by njms, about development and other things</description><item><title>Closures in programming: What are they and how do they work?</title><link>https://njms.ca/posts/closures-in-programming.html</link><description>&lt;p&gt;Any avid programmer would likely have heard the term “closure” a handful of times, though many newcomers may struggle trying to understand how they work, or even what they are. Let&apos;s take a look at a definition &lt;a href=&quot;https://en.wikipedia.org/wiki/Closure_(computer_programming)&quot;&gt;taken from Wikipedia&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;In programming languages, closures (also lexical closures or function closures) are techniques for implementing lexically scoped name binding in languages with first-class functions.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;That’s, well, not very intuitive. To be fair, closures aren’t an incredibly intuitive thing when you define them like that. I’m certain, however, that though breaking this definition down things will become much clearer. Let’s take a look:&lt;/p&gt;
+</description><guid>https://njms.ca/posts/closures-in-programming.html</guid><pubDate>Thu, 28 Dec 2017 12:00:00 +0100</pubDate></item><item><title>Modern JS concepts: Arrow functions, the new and improved function literals</title><link>https://njms.ca/posts/modern-js-arrow-functions.html</link><description>&lt;p&gt;In the past, we would see a lot of this:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;someFunction(param, function() {
+  // do something
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now, this gets a little bit cumbersome after a while. Not only are function expressions long, they include a kitchen sink of features that you probably won&apos;t need in all cases, like the &lt;code&gt;this&lt;/code&gt; or a &lt;code&gt;new&lt;/code&gt; constructor.&lt;/p&gt;
+&lt;p&gt;Thankfully, in EMCAScript 6, we got this whole new and improved arrow function. Let&apos;s take a look.&lt;/p&gt;
+</description><guid>https://njms.ca/posts/modern-js-arrow-functions.html</guid><pubDate>Thu, 28 Dec 2017 12:00:00 +0100</pubDate></item></channel></rss>
