@@ -1,0 +1,17 @@
+layout: default.liquid ---
+<div>
+  <div class="hero">
+    <h1>njms</h1>
+    <p>Programming, web design and lots of blockchain enthusiasm.</p>
+  </div>
+  <div class="posts">
+    {% for post in collections.posts.pages %}
+    <div>
+      <h2><a href="../{{ post.permalink }}">{{ post.title }}</a></h2>
+      <h4>{{ post.published_date }}</h4>
+      <p>{{ post.excerpt }}</p>
+      <hr>
+    </div>
+    {% endfor %}
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="col-md-3 col-sm-3 sidebar">
+  <h2>njms</h2>
+  <div class="links">
+    <a href="../home/index.html">home</a>
+    <a href="https://mastodon.club/@natejms">mastodon</a>
+    <a href="https://github.com/natejms">github</a>
+  </div>
+
+  {% for post in collections.posts.pages %}
+    <div class="sidebar-post">
+      <h4><a href="../{{ post.permalink }}">{{ post.title }}</a></h4>
+      <h6>{{ post.published_date }}</h6>
+    </div>
+  {% endfor %}
+</div>

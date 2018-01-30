@@ -1,0 +1,12 @@
+source: _src
+destination: .
+site:
+  title: njms blog
+  description: Programming, web design and lots of blockchain enthusiasm.
+  base_url: https://njms.ca
+posts:
+  rss: rss.xml
+  jsonfeed: feed.json
+default:
+  excerpt_separator: "<span data-separator></span>"
+  is_draft: false
