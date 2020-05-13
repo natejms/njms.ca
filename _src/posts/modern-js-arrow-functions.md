@@ -1,3 +1,4 @@
+---
 layout: post.liquid
 
 title: "Modern JS concepts: Arrow functions, the new and improved function literals"

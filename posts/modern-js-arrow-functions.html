@@ -57,88 +57,98 @@
                   </figure>
                   <br>
                   <p>In the past, we would see a lot of this:</p>
-<pre><code class="language-javascript">someFunction(param, function() {
-  // do something
-});
-</code></pre>
+<pre style="background-color:#2b303b;">
+<span style="background-color:#2b303b;color:#8fa1b3;">someFunction</span><span style="background-color:#2b303b;color:#c0c5ce;">(</span><span style="background-color:#2b303b;color:#bf616a;">param</span><span style="background-color:#2b303b;color:#c0c5ce;">, </span><span style="background-color:#2b303b;color:#b48ead;">function</span><span style="background-color:#2b303b;color:#c0c5ce;">() {
+  </span><span style="background-color:#2b303b;color:#65737e;">// do something
+</span><span style="background-color:#2b303b;color:#c0c5ce;">});
+</span></pre>
 <p>Now, this gets a little bit cumbersome after a while. Not only are function expressions long, they include a kitchen sink of features that you probably won't need in all cases, like the <code>this</code> or a <code>new</code> constructor.</p>
 <p>Thankfully, in EMCAScript 6, we got this whole new and improved arrow function. Let's take a look.<span data-separator></span></p>
 <h2>Syntax</h2>
 <p>The declaration of an arrow function goes like this:</p>
-<pre><code>(param1, param2 ... paramN) =&gt; expression
-</code></pre>
+<pre style="background-color:#2b303b;">
+<span style="background-color:#2b303b;color:#c0c5ce;">(param1, param2 ... paramN) =&gt; expression
+</span></pre>
 <p>Arrow functions may remind you of the lambda or anonymous function syntax used various other programming languages like Haskell:</p>
-<pre><code class="language-javascript">someFunction(param, () =&gt; {
-  // do something
-});
-</code></pre>
+<pre style="background-color:#2b303b;">
+<span style="background-color:#2b303b;color:#8fa1b3;">someFunction</span><span style="background-color:#2b303b;color:#c0c5ce;">(</span><span style="background-color:#2b303b;color:#bf616a;">param</span><span style="background-color:#2b303b;color:#c0c5ce;">, () </span><span style="background-color:#2b303b;color:#b48ead;">=&gt; </span><span style="background-color:#2b303b;color:#c0c5ce;">{
+  </span><span style="background-color:#2b303b;color:#65737e;">// do something
+</span><span style="background-color:#2b303b;color:#c0c5ce;">});
+</span></pre>
 <p>As you can see, they're defined with the parameters wrapped in brackets, followed by an <code>=&gt;</code> arrow and an expression. If your arrow function doesn't need any parameters, you can just use two empty brackets as I did above. Here's another example:</p>
-<pre><code class="language-javascript">var array = [1, 2, 3, 4];
-var increment = 2;
+<pre style="background-color:#2b303b;">
+<span style="background-color:#2b303b;color:#b48ead;">var </span><span style="background-color:#2b303b;color:#bf616a;">array </span><span style="background-color:#2b303b;color:#c0c5ce;">= [</span><span style="background-color:#2b303b;color:#d08770;">1</span><span style="background-color:#2b303b;color:#c0c5ce;">, </span><span style="background-color:#2b303b;color:#d08770;">2</span><span style="background-color:#2b303b;color:#c0c5ce;">, </span><span style="background-color:#2b303b;color:#d08770;">3</span><span style="background-color:#2b303b;color:#c0c5ce;">, </span><span style="background-color:#2b303b;color:#d08770;">4</span><span style="background-color:#2b303b;color:#c0c5ce;">];
+</span><span style="background-color:#2b303b;color:#b48ead;">var </span><span style="background-color:#2b303b;color:#bf616a;">increment </span><span style="background-color:#2b303b;color:#c0c5ce;">= </span><span style="background-color:#2b303b;color:#d08770;">2</span><span style="background-color:#2b303b;color:#c0c5ce;">;
 
-var incremented = array.map(item =&gt; item + increment); // [3, 4, 5, 6]
-</code></pre>
+</span><span style="background-color:#2b303b;color:#b48ead;">var </span><span style="background-color:#2b303b;color:#bf616a;">incremented </span><span style="background-color:#2b303b;color:#c0c5ce;">= </span><span style="background-color:#2b303b;color:#bf616a;">array</span><span style="background-color:#2b303b;color:#c0c5ce;">.</span><span style="background-color:#2b303b;color:#8fa1b3;">map</span><span style="background-color:#2b303b;color:#c0c5ce;">(item </span><span style="background-color:#2b303b;color:#b48ead;">=&gt; </span><span style="background-color:#2b303b;color:#bf616a;">item </span><span style="background-color:#2b303b;color:#c0c5ce;">+ </span><span style="background-color:#2b303b;color:#bf616a;">increment</span><span style="background-color:#2b303b;color:#c0c5ce;">); </span><span style="background-color:#2b303b;color:#65737e;">// [3, 4, 5, 6]
+</span></pre>
 <p>When writing arrow functions like this (without using <code>{}</code> curly braces), you don't even need to use the <code>return</code> keyword, similar to how you would return a value in a language like Rust. It's implied that, since there's only one expression that needs to be evaluated, it should be returned.</p>
 <p>In that example, we didn't use brackets around the argument <code>param</code>. When you only have one parameter, brackets are optional.</p>
 <h2>Advantages</h2>
 <p>One of the things that makes arrow functions so useful is that they don't have their own <code>this</code> object. Consider the following:</p>
-<pre><code class="language-javascript">var object = {
-  values: [2, 4, 6, 8],
-  multiplyBy: 7,
-  multiply() { // ES6 also let's us write functions in objects like this
-    return this.values.map(function (value) {
-      return value * this.multiplyBy;
+<pre style="background-color:#2b303b;">
+<span style="background-color:#2b303b;color:#b48ead;">var </span><span style="background-color:#2b303b;color:#bf616a;">object </span><span style="background-color:#2b303b;color:#c0c5ce;">= {
+  values: [</span><span style="background-color:#2b303b;color:#d08770;">2</span><span style="background-color:#2b303b;color:#c0c5ce;">, </span><span style="background-color:#2b303b;color:#d08770;">4</span><span style="background-color:#2b303b;color:#c0c5ce;">, </span><span style="background-color:#2b303b;color:#d08770;">6</span><span style="background-color:#2b303b;color:#c0c5ce;">, </span><span style="background-color:#2b303b;color:#d08770;">8</span><span style="background-color:#2b303b;color:#c0c5ce;">],
+  multiplyBy: </span><span style="background-color:#2b303b;color:#d08770;">7</span><span style="background-color:#2b303b;color:#c0c5ce;">,
+  </span><span style="background-color:#2b303b;color:#8fa1b3;">multiply</span><span style="background-color:#2b303b;color:#c0c5ce;">() { </span><span style="background-color:#2b303b;color:#65737e;">// ES6 also let&#39;s us write functions in objects like this
+    </span><span style="background-color:#2b303b;color:#b48ead;">return </span><span style="background-color:#2b303b;color:#bf616a;">this</span><span style="background-color:#2b303b;color:#c0c5ce;">.values.</span><span style="background-color:#2b303b;color:#8fa1b3;">map</span><span style="background-color:#2b303b;color:#c0c5ce;">(</span><span style="background-color:#2b303b;color:#b48ead;">function </span><span style="background-color:#2b303b;color:#c0c5ce;">(value) {
+      </span><span style="background-color:#2b303b;color:#b48ead;">return </span><span style="background-color:#2b303b;color:#bf616a;">value </span><span style="background-color:#2b303b;color:#c0c5ce;">* </span><span style="background-color:#2b303b;color:#bf616a;">this</span><span style="background-color:#2b303b;color:#c0c5ce;">.multiplyBy;
     })
   }
 }
-</code></pre>
+</span></pre>
 <p>However, if we try to run this, we'll get an <code>Array [ NaN, NaN, NaN, NaN ]</code> value. Why, you ask? Try taking a closer look at that anonymous function.</p>
 <p>As I explained in <a href="https://steemit.com/programming/@njms/closures-in-programming-what-are-they-and-how-do-they-work">my article on closures</a>, Every nested function takes on the <em>lexical scope</em> of the function it's nested in. In other words, all values made available in the outer function exist in the inner function. For this reason, we might expect that the <code>this</code> object should be available as well. However, the anonymous function you're working in already has it's own <code>this</code> which takes superiority.</p>
 <p>Though we might have access to <code>multiplyBy</code> in the outer function, getting to it within the inner function is a bit more difficult. Before ES6, people often used this hack:</p>
-<pre><code class="language-javascript">var self = this;
+<pre style="background-color:#2b303b;">
+<span style="background-color:#2b303b;color:#b48ead;">var </span><span style="background-color:#2b303b;color:#bf616a;">self </span><span style="background-color:#2b303b;color:#c0c5ce;">= </span><span style="background-color:#2b303b;color:#bf616a;">this</span><span style="background-color:#2b303b;color:#c0c5ce;">;
 
-return this.values.map(function (value) {
-  return value * self.multiplyBy;
+</span><span style="background-color:#2b303b;color:#b48ead;">return </span><span style="background-color:#2b303b;color:#bf616a;">this</span><span style="background-color:#2b303b;color:#c0c5ce;">.values.</span><span style="background-color:#2b303b;color:#8fa1b3;">map</span><span style="background-color:#2b303b;color:#c0c5ce;">(</span><span style="background-color:#2b303b;color:#b48ead;">function </span><span style="background-color:#2b303b;color:#c0c5ce;">(value) {
+  </span><span style="background-color:#2b303b;color:#b48ead;">return </span><span style="background-color:#2b303b;color:#bf616a;">value </span><span style="background-color:#2b303b;color:#c0c5ce;">* </span><span style="background-color:#2b303b;color:#bf616a;">self</span><span style="background-color:#2b303b;color:#c0c5ce;">.multiplyBy;
 })
-</code></pre>
+</span></pre>
 <p>Sure, this works, but it's a bit of a compromise. Thankfully, arrow functions solve this issue beautifully.</p>
-<pre><code class="language-javascript">var object = {
-  values: [2, 4, 6, 8],
-  multiplyBy: 7,
-  multiply() {
-    return this.values.map(value =&gt; value * this.multiplyBy);
+<pre style="background-color:#2b303b;">
+<span style="background-color:#2b303b;color:#b48ead;">var </span><span style="background-color:#2b303b;color:#bf616a;">object </span><span style="background-color:#2b303b;color:#c0c5ce;">= {
+  values: [</span><span style="background-color:#2b303b;color:#d08770;">2</span><span style="background-color:#2b303b;color:#c0c5ce;">, </span><span style="background-color:#2b303b;color:#d08770;">4</span><span style="background-color:#2b303b;color:#c0c5ce;">, </span><span style="background-color:#2b303b;color:#d08770;">6</span><span style="background-color:#2b303b;color:#c0c5ce;">, </span><span style="background-color:#2b303b;color:#d08770;">8</span><span style="background-color:#2b303b;color:#c0c5ce;">],
+  multiplyBy: </span><span style="background-color:#2b303b;color:#d08770;">7</span><span style="background-color:#2b303b;color:#c0c5ce;">,
+  </span><span style="background-color:#2b303b;color:#8fa1b3;">multiply</span><span style="background-color:#2b303b;color:#c0c5ce;">() {
+    </span><span style="background-color:#2b303b;color:#b48ead;">return </span><span style="background-color:#2b303b;color:#bf616a;">this</span><span style="background-color:#2b303b;color:#c0c5ce;">.values.</span><span style="background-color:#2b303b;color:#8fa1b3;">map</span><span style="background-color:#2b303b;color:#c0c5ce;">(value </span><span style="background-color:#2b303b;color:#b48ead;">=&gt; </span><span style="background-color:#2b303b;color:#bf616a;">value </span><span style="background-color:#2b303b;color:#c0c5ce;">* </span><span style="background-color:#2b303b;color:#bf616a;">this</span><span style="background-color:#2b303b;color:#c0c5ce;">.multiplyBy);
   }
 }
-</code></pre>
+</span></pre>
 <p>Since arrow functions don't have <code>this</code>, no referencing is required to access the <code>multiplyBy</code> value.</p>
 <p>Perfect.</p>
 <h2>Another (practical) use case</h2>
 <p>Let's take a look at this function I wrote to simplify the process of querying an API with an AJAX call using jQuery:</p>
-<pre><code class="language-javascript">function queryAPI(query, datatype, callback) {
-  return $.ajax({
-    url: query,
-    dataType: datatype,
-    success: callback.success,
-    error: callback.error
+<pre style="background-color:#2b303b;">
+<span style="background-color:#2b303b;color:#b48ead;">function </span><span style="background-color:#2b303b;color:#8fa1b3;">queryAPI</span><span style="background-color:#2b303b;color:#c0c5ce;">(query, datatype, callback) {
+  </span><span style="background-color:#2b303b;color:#b48ead;">return </span><span style="background-color:#2b303b;color:#bf616a;">$</span><span style="background-color:#2b303b;color:#c0c5ce;">.</span><span style="background-color:#2b303b;color:#8fa1b3;">ajax</span><span style="background-color:#2b303b;color:#c0c5ce;">({
+    url: </span><span style="background-color:#2b303b;color:#bf616a;">query</span><span style="background-color:#2b303b;color:#c0c5ce;">,
+    dataType: </span><span style="background-color:#2b303b;color:#bf616a;">datatype</span><span style="background-color:#2b303b;color:#c0c5ce;">,
+    success: </span><span style="background-color:#2b303b;color:#bf616a;">callback</span><span style="background-color:#2b303b;color:#c0c5ce;">.success,
+    error: </span><span style="background-color:#2b303b;color:#bf616a;">callback</span><span style="background-color:#2b303b;color:#c0c5ce;">.error
   });
 }
-</code></pre>
+</span></pre>
 <p>The function takes three parameters: the complete URL, the data type and a success and error callback wrapped in an object. We can call this function like so:</p>
-<pre><code class="language-javascript">queryAPI(&quot;https://api.example.com/some/query&quot;, &quot;json&quot;, {
-  success: function(data) {
-    element.innerHTML = data;
+<pre style="background-color:#2b303b;">
+<span style="background-color:#2b303b;color:#8fa1b3;">queryAPI</span><span style="background-color:#2b303b;color:#c0c5ce;">(&quot;</span><span style="background-color:#2b303b;color:#a3be8c;">https://api.example.com/some/query</span><span style="background-color:#2b303b;color:#c0c5ce;">&quot;, &quot;</span><span style="background-color:#2b303b;color:#a3be8c;">json</span><span style="background-color:#2b303b;color:#c0c5ce;">&quot;, {
+  </span><span style="background-color:#2b303b;color:#8fa1b3;">success</span><span style="background-color:#2b303b;color:#c0c5ce;">: </span><span style="background-color:#2b303b;color:#b48ead;">function</span><span style="background-color:#2b303b;color:#c0c5ce;">(data) {
+    </span><span style="background-color:#2b303b;color:#bf616a;">element</span><span style="background-color:#2b303b;color:#c0c5ce;">.innerHTML = </span><span style="background-color:#2b303b;color:#bf616a;">data</span><span style="background-color:#2b303b;color:#c0c5ce;">;
   },
-  error: function(error) {
-    element.innerHTML = error;
+  </span><span style="background-color:#2b303b;color:#8fa1b3;">error</span><span style="background-color:#2b303b;color:#c0c5ce;">: </span><span style="background-color:#2b303b;color:#b48ead;">function</span><span style="background-color:#2b303b;color:#c0c5ce;">(error) {
+    </span><span style="background-color:#2b303b;color:#bf616a;">element</span><span style="background-color:#2b303b;color:#c0c5ce;">.innerHTML = </span><span style="background-color:#2b303b;color:#bf616a;">error</span><span style="background-color:#2b303b;color:#c0c5ce;">;
   }
 })
-</code></pre>
+</span></pre>
 <p>Now that we know more about arrow functions, things would look a lot nicer written like this:</p>
-<pre><code class="language-javascript">queryAPI(&quot;https://api.example.com/some/query&quot;, &quot;json&quot;, {
-  success: data =&gt; element.innerHTML = data,
-  error: error =&gt; element.innerHTML = error
-})
-</code></pre>
+<pre style="background-color:#2b303b;">
+<span style="background-color:#2b303b;color:#8fa1b3;">queryAPI</span><span style="background-color:#2b303b;color:#c0c5ce;">(&quot;</span><span style="background-color:#2b303b;color:#a3be8c;">https://api.example.com/some/query</span><span style="background-color:#2b303b;color:#c0c5ce;">&quot;, &quot;</span><span style="background-color:#2b303b;color:#a3be8c;">json</span><span style="background-color:#2b303b;color:#c0c5ce;">&quot;, {
+  </span><span style="background-color:#2b303b;color:#8fa1b3;">success</span><span style="background-color:#2b303b;color:#c0c5ce;">: data </span><span style="background-color:#2b303b;color:#b48ead;">=&gt; </span><span style="background-color:#2b303b;color:#bf616a;">element</span><span style="background-color:#2b303b;color:#c0c5ce;">.innerHTML = </span><span style="background-color:#2b303b;color:#bf616a;">data</span><span style="background-color:#2b303b;color:#c0c5ce;">,
+  </span><span style="background-color:#2b303b;color:#8fa1b3;">error</span><span style="background-color:#2b303b;color:#c0c5ce;">: error </span><span style="background-color:#2b303b;color:#b48ead;">=&gt; </span><span style="background-color:#2b303b;color:#bf616a;">element</span><span style="background-color:#2b303b;color:#c0c5ce;">.innerHTML = </span><span style="background-color:#2b303b;color:#bf616a;">error
+</span><span style="background-color:#2b303b;color:#c0c5ce;">})
+</span></pre>
 <p>EMCAScript 6 is full of great features. Sure, many of them might not be supported natively in all browsers yet, but that doesn't mean it's too early to start!</p>
 <h2>Further reading</h2>
 <ul>

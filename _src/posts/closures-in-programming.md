@@ -1,3 +1,4 @@
+---
 layout: post.liquid
 
 title: "Closures in programming: What are they and how do they work?"

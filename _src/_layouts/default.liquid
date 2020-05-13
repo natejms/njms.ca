@@ -6,13 +6,13 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>njms - {{ page.title }}</title>
 
-      {% include '_layouts/head.liquid' %}
+      {% include 'head.liquid' %}
     </head>
     <body>
     <div>
       <div class="container-fluid">
         <div class="row">
-          {% include '_layouts/sidebar.liquid' %}
+          {% include 'sidebar.liquid' %}
         </div>
         <div class="row">
           <div class="col-md-3 col-sm-3"></div>
@@ -20,7 +20,7 @@
             <div class="main-content">
               {{ page.content }}
             </div>
-            {% include '_layouts/footer.liquid' %}
+            {% include 'footer.liquid' %}
           </div>
         </div>
       </div>
