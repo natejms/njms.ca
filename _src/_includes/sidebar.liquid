@@ -5,10 +5,16 @@
     <a href="https://github.com/natejms">github</a>
   </div>
 
+  {% assign n = 0 %}
   {% for post in collections.posts.pages %}
+    {% if n > 2 %}
+      {% break %}
+    {% endif %}
     <div class="sidebar-post">
       <h4><a href="../{{ post.permalink }}">{{ post.title }}</a></h4>
       <h6>{{ post.published_date }}</h6>
     </div>
+
+    {% assign n = n | plus: 1 %}
   {% endfor %}
 </div>
