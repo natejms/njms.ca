@@ -71,6 +71,8 @@ footer {
   text-align: center;
 }
 
+.footer-links { margin: 0 }
+
 .post {
   padding: 10vw;
   font-size: 20px;
