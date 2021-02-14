@@ -5,7 +5,7 @@ title: "The Fediverse only solves half the problem."
 published_date: 2021-02-14 12:00:00 +0100
 
 data:
-  thumbnail: ../assets/img/post-thumbnails/the-fediverse-solves-half-the-problem.jpg
+  thumbnail: /assets/img/post-thumbnails/the-fediverse-solves-half-the-problem.jpg
   caption: Downloading Flux might save your eyes, but it won't save you from doomscrolling. Photo by Gaelle Marcel on Unsplash
 ---
 

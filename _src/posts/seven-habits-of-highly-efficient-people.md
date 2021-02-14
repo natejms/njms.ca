@@ -5,7 +5,7 @@ title: "The 7 Habits of Highly Efficient People"
 published_date: 2020-09-13 20:00:00 +0100
 
 data:
-  thumbnail: ../assets/img/post-thumbnails/seven-habits-of-highly-efficient-people.png
+  thumbnail: /assets/img/post-thumbnails/seven-habits-of-highly-efficient-people.png
   caption: "\"Working makes me happy, right?\" Asks the efficient worker. Photo by Tim van der Kuip on Unsplash"
 ---
 If you've been around leftist social media recently, you've probably heard about what some call [the productivity pay-gap](https://www.epi.org/productivity-pay-gap/). Simply put, the productivity pay-gap is the idea that despite a drastic increase in worker productivity since the late 1970s (69.3% to be exact), workers haven't seen nearly as great of an increase in their average hourly pay (just 11.6%). It's no surprise workers are getting more productive: the late 20th century came with enormous technological developments that radicalized the way we work. Today, everything that can be automated _is_ automated, and the number of different tasks we know how to automate only seems to grow by the day. Futurists are split on what this progress will ultimately bring about, but one thing is for sure: we need to change the way we think about work.<span data-separator></span>

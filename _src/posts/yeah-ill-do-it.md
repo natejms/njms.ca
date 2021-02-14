@@ -5,7 +5,7 @@ title: "\"Yeah I'll do it\", and why your team sucks"
 published_date: 2020-05-15 13:00:00 +0100
 
 data:
-  thumbnail: ../assets/img/post-thumbnails/yeah-ill-do-it.jpg
+  thumbnail: /assets/img/post-thumbnails/yeah-ill-do-it.jpg
   caption: A guy says "yeah, I'll do it" and then sucks at it (I'm sure he's actually great at his job but that wouldn't serve the purpose of this article). Photo by Surface on Unsplash.
 ---
 

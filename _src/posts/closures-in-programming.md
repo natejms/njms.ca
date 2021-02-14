@@ -5,7 +5,7 @@ title: "Closures in programming: What are they and how do they work?"
 published_date: 2017-12-28 12:00:00 +0100
 
 data:
-  thumbnail: ../assets/img/post-thumbnails/closures-in-programming.png
+  thumbnail: /assets/img/post-thumbnails/closures-in-programming.png
   caption: A nested function written in JavaScript
 ---
 

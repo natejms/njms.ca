@@ -1,12 +1,31 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <script>
-      // Redirect before the page loads
-      location.href = "home/index.html";
-    </script>
-  </head>
-  <body>
-    <p>Click <a href="home/index.html">here</a> if not redirected</p>
-  </body>
-</html>
+---
+layout: default.liquid
+---
+<div>
+  <div class="hero">
+    <h1>Hi, my name is Nat</h1>
+    <p>
+      Also known as "njms" and "natjms" where that username isn't available. I'm
+      a programmer and artist who goes by they/them pronouns. Here's an 
+      abridged list of the things I do:
+    </p>
+
+    <ul>
+      <li>Server-side scripting in Elm</li>
+      <li>Software in Rust</li>
+      <li>React Native app development</li>
+      <li>Websites and web apps using Elm</li>
+      <li>I also write about society and its intersection with technology</li>
+    </ul>
+  </div>
+  <div class="posts">
+    {% for post in collections.posts.pages %}
+    <div>
+      <h2><a href="../{{ post.permalink }}">{{ post.title }}</a></h2>
+      <h4>{{ post.published_date }}</h4>
+      <p>{{ post.excerpt }}</p>
+      <hr>
+    </div>
+    {% endfor %}
+  </div>
+</div>

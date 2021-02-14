@@ -5,7 +5,7 @@ title: "The dark web could be a really great place."
 published_date: 2018-09-09 12:00:00 +0100
 
 data:
-  thumbnail: ../assets/img/post-thumbnails/html-atom-editor.jpg
+  thumbnail: /assets/img/post-thumbnails/html-atom-editor.jpg
   caption: All the best hackers work exclusively in HTML. Photo by Sai Kiran Anagani on Unsplash.
 ---
 
