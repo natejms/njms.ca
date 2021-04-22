@@ -1,8 +1,8 @@
 source: _src
 destination: .
 site:
-  title: njms blog
-  description: Programming, web design and lots of blockchain enthusiasm.
+  title: "njms' blog"
+  description: A place for Nat (njms) to talk about technology and society
   base_url: https://njms.ca
 posts:
   rss: rss.xml
