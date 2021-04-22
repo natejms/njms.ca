@@ -7,6 +7,7 @@ published_date: 2017-12-28 12:00:00 +0100
 data:
   thumbnail: /assets/img/post-thumbnails/modern-js-arrow-functions.png
   caption: An object demonstrating a use case for arrow functions
+  alt_text: An object demonstrating a use case for arrow functions
 ---
 
 In the past, we would see a lot of this:

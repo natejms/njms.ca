@@ -7,6 +7,7 @@ published_date: 2017-12-28 12:00:00 +0100
 data:
   thumbnail: /assets/img/post-thumbnails/closures-in-programming.png
   caption: A nested function written in JavaScript
+  alt_text: A nested function written in JavaScript
 ---
 
 Any avid programmer would likely have heard the term “closure” a handful of times, though many newcomers may struggle trying to understand how they work, or even what they are. Let's take a look at a definition [taken from Wikipedia](https://en.wikipedia.org/wiki/Closure_(computer_programming)):

@@ -7,6 +7,7 @@ published_date: 2018-09-09 12:00:00 +0100
 data:
   thumbnail: /assets/img/post-thumbnails/html-atom-editor.jpg
   caption: All the best hackers work exclusively in HTML. Photo by Sai Kiran Anagani on Unsplash.
+  alt_text: A screen displaying HTML code
 ---
 
 Recently, I've been working on this essay about Tor and the dark web in general. This has really got me thinking about how (or rather, why) the dark web is painted with such a horrid image. Sure, there are black markets operating over Tor Onion Services, but surely there's also plenty of black markets operating on the clearnet, down my street and all across the country.

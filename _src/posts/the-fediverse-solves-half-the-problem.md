@@ -7,6 +7,7 @@ published_date: 2021-02-14 12:00:00 +0100
 data:
   thumbnail: /assets/img/post-thumbnails/the-fediverse-solves-half-the-problem.jpg
   caption: Downloading Flux might save your eyes, but it won't save you from doomscrolling. Photo by Gaelle Marcel on Unsplash
+  alt_text: A person laying in a bed wrapped in a blanket on their phone
 ---
 
 I first got into Mastodon about four years ago. Back then, we were feeling proud of ourselves for having brought the Fediverse to over a million users; today it appears that number has quadrupled. ActivityPub has given us the tools to create social media platforms large enough to overcome the network effect, and the Fediverse seems like the FLOSS community's best and perhaps only bet at seriously challenging the likes of Twitter and Facebook. Getting over a million people into the Fediverse was a huge accomplishment, because for the first time, we finally had a half decent platform we knew wasn't spying on us. We had proved that building a grass roots social media platform entirely on volunteer effort wasn't impossible; in fact, it was very much the reality we found ourselves in. The technolibertarians and FLOSS lovers rejoiced, and it felt pretty amazing to be there with them.<span data-separator></span>

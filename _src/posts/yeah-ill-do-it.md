@@ -7,6 +7,7 @@ published_date: 2020-05-15 13:00:00 +0100
 data:
   thumbnail: /assets/img/post-thumbnails/yeah-ill-do-it.jpg
   caption: A guy says "yeah, I'll do it" and then sucks at it (I'm sure he's actually great at his job but that wouldn't serve the purpose of this article). Photo by Surface on Unsplash.
+  alt_text: A person sitting on a couch working on a laptop
 ---
 
 Despite the impending threat of a global pandemic, our economy hasn't stopped just yet. While many critical jobs in supply chains have come to a halt, lots of higher level jobs that would have otherwise involved online collaboration are running in full swing. This sort of environment puts all kinds of new pressures on teams, and teams that have thus far chosen not to emphasize the importance of team development are being put to the test. Can YOU survive the pandemic, even with your negligence of team building?
