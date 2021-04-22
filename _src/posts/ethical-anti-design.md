@@ -3,6 +3,7 @@ layout: post.liquid
 
 title: "Ethical anti-design, or designing products that people can't get addicted to."
 published_date: 2021-02-21 12:00:00 +0100
+description: Ethical anti-design is a design practice used in Resin where you intentionally add friction (or at least, what might feel like friction) to an app's interface in order to prevent addictive or otherwise unhealthy behavior.
 
 data:
   thumbnail: /assets/img/post-thumbnails/ethical-anti-design.png

@@ -3,6 +3,7 @@ layout: post.liquid
 
 title: "The dark web could be a really great place."
 published_date: 2018-09-09 12:00:00 +0100
+description: The way the media sensationalizes the dark web has created a negative feedback loop that's preventing us from using a really powerful technology to its fullest potential.
 
 data:
   thumbnail: /assets/img/post-thumbnails/html-atom-editor.jpg

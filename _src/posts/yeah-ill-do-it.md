@@ -3,6 +3,7 @@ layout: post.liquid
 
 title: "\"Yeah I'll do it\", and why your team sucks"
 published_date: 2020-05-15 13:00:00 +0100
+description: When we focus too much on when we're going to get stuff done, we forget to ensure both that we're doing the right things and that we're doing them in the right way
 
 data:
   thumbnail: /assets/img/post-thumbnails/yeah-ill-do-it.jpg

@@ -3,6 +3,7 @@ layout: post.liquid
 
 title: "The 7 Habits of Highly Efficient People"
 published_date: 2020-09-13 20:00:00 +0100
+description: The biggest problem with modern self-help culture is the assumption that the people who use us know better how to live our lives than ourselves.
 
 data:
   thumbnail: /assets/img/post-thumbnails/seven-habits-of-highly-efficient-people.png

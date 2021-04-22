@@ -3,6 +3,7 @@ layout: post.liquid
 
 title: "Modern JS concepts: Arrow functions, the new and improved function literals"
 published_date: 2017-12-28 12:00:00 +0100
+description: Arrow functions are like function literals, just cooler in every way.
 
 data:
   thumbnail: /assets/img/post-thumbnails/modern-js-arrow-functions.png

@@ -3,6 +3,7 @@ layout: post.liquid
 
 title: "Closures in programming: What are they and how do they work?"
 published_date: 2017-12-28 12:00:00 +0100
+description: Closures are functions that keep all the variables declared in them around even after the function's been run, making things like higher order functions possible
 
 data:
   thumbnail: /assets/img/post-thumbnails/closures-in-programming.png

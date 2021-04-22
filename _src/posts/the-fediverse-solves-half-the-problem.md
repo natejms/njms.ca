@@ -3,6 +3,7 @@ layout: post.liquid
 
 title: "The Fediverse only solves half the problem."
 published_date: 2021-02-14 12:00:00 +0100
+description: In all the excitement around the standardization of ActivityPub, deciding how we'd organize the FOSS social network of the future, we lost track of all the dangerous design patterns that were creeping into the Fediverse out of habit.
 
 data:
   thumbnail: /assets/img/post-thumbnails/the-fediverse-solves-half-the-problem.jpg
