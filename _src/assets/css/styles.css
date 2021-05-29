@@ -101,3 +101,9 @@ footer {
     display: block;
   }
 }
+
+@media print {
+  .sidebar {
+    display: none;
+  }
+}
